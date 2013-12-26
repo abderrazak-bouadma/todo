@@ -1,0 +1,21 @@
+<head>
+  <title>Todos</title>
+</head>
+
+<body>
+	<div>
+		<h1>Todos</h1>
+ 		{{> todos}}
+ 	</div>
+</body>
+
+<template name="todos">
+		{{#each todoList}}
+			<div {{#if done}}class="alert alert-success"{{/if}} {{#unless done}}class="alert alert-info"{{/unless}}>
+					<input type="checkbox" {{#if done}}checked{{/if}} class="status"/>
+					<span>{{text}}</span>
+					<a href="#" class="delete"><i class="icon-remove-circle"></i></a>
+			</div>
+		{{/each}}
+		<input type="text"><input type="date"><a href="#" class="create"><i class=" icon-ok"></i></a>
+</template>
